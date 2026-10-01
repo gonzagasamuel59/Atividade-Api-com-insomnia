@@ -1,0 +1,56 @@
+{
+  "jogos": [
+    {
+      "titulo": "Minecraft",
+      "genero": "Sandbox",
+      "plataforma": "PC",
+      "nota": 9,
+      "status": "Finalizado",
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "titulo": "Hollow Knight",
+      "genero": "Metroidvania",
+      "plataforma": "PC",
+      "nota": 10,
+      "status": "Finalizado"
+    },
+    {
+      "id": "3",
+      "titulo": "Forza Horizon 5",
+      "genero": "Corrida",
+      "plataforma": "Xbox",
+      "nota": 8,
+      "status": "Quero jogar"
+    },
+    {
+      "id": "4",
+      "titulo": "GTA V",
+      "genero": "Ação",
+      "plataforma": "PC",
+      "nota": 9,
+      "status": "Finalizado"
+    },
+    {
+      "id": "5",
+      "titulo": "FIFA 27",
+      "genero": "Esporte",
+      "plataforma": "PlayStation",
+      "nota": 8,
+      "status": "Jogando"
+    },
+    {
+      "id": "Fx4Wyo2JOSg"
+    },
+    {
+      "titulo": "God of War",
+      "genero": "Ação",
+      "plataforma": "PlayStation",
+      "nota": 10,
+      "status": "Finalizado",
+      "id": "5-dNt0zAu_g"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

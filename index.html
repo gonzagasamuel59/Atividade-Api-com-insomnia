@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GameTrack</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+    <header>
+        <div class="container">
+            <h1> GameTrack</h1>
+            <p>Sua biblioteca de jogos</p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- DASHBOARD -->
+        <section class="dashboard">
+
+            <div class="dashboard-card">
+                <h2 id="totalJogos">0</h2>
+                <p>Jogos cadastrados</p>
+            </div>
+
+            <div class="dashboard-card">
+                <h2 id="jogando">0</h2>
+                <p>Jogando</p>
+            </div>
+
+            <div class="dashboard-card">
+                <h2 id="finalizados">0</h2>
+                <p>Finalizados</p>
+            </div>
+
+        </section>
+
+
+        <!-- PESQUISA E FILTRO -->
+        <section class="filtros">
+
+            <input
+                type="text"
+                id="pesquisa"
+                placeholder="Pesquisar jogo..."
+            >
+
+            <select id="filtroStatus">
+
+                <option value="Todos">Todos</option>
+                <option value="Quero jogar">Quero jogar</option>
+                <option value="Jogando">Jogando</option>
+                <option value="Finalizado">Finalizado</option>
+                <option value="Abandonado">Abandonado</option>
+
+            </select>
+
+        </section>
+
+
+        <!-- FORMULÁRIO -->
+        <section class="formulario">
+
+            <h2 id="tituloFormulario">Cadastrar novo jogo</h2>
+
+            <form id="formJogo">
+
+                <input
+                    type="text"
+                    id="titulo"
+                    placeholder="Título do jogo"
+                >
+
+                <input
+                    type="text"
+                    id="genero"
+                    placeholder="Gênero"
+                >
+
+                <input
+                    type="text"
+                    id="plataforma"
+                    placeholder="Plataforma"
+                >
+
+                <input
+                    type="number"
+                    id="nota"
+                    placeholder="Nota (0 a 10)"
+                    min="0"
+                    max="10"
+                    step="0.1"
+                >
+
+                <select id="status">
+
+                    <option value="">Selecione o status</option>
+                    <option value="Quero jogar">Quero jogar</option>
+                    <option value="Jogando">Jogando</option>
+                    <option value="Finalizado">Finalizado</option>
+                    <option value="Abandonado">Abandonado</option>
+
+                </select>
+
+                <button type="submit" id="btnSalvar">
+                    Cadastrar jogo
+                </button>
+
+                <button
+                    type="button"
+                    id="btnCancelar"
+                    class="btn-cancelar"
+                    style="display: none;"
+                >
+                    Cancelar edição
+                </button>
+
+            </form>
+
+            <p id="mensagem"></p>
+
+        </section>
+
+
+        <!-- LISTA DE JOGOS -->
+        <section>
+
+            <h2 class="titulo-lista">Meus jogos</h2>
+
+            <div id="listaJogos" class="lista-jogos">
+                <!-- Os jogos serão criados pelo JavaScript -->
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
