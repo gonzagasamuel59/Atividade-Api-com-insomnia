@@ -17,7 +17,7 @@ body {
 }
 
 
-/* CABEÇALHO */
+
 
 header {
     background-color: #2563eb;
@@ -36,7 +36,7 @@ header p {
 }
 
 
-/* DASHBOARD */
+
 
 .dashboard {
     display: grid;
@@ -64,7 +64,7 @@ header p {
 }
 
 
-/* FILTROS */
+
 
 .filtros {
     display: flex;
@@ -85,7 +85,7 @@ header p {
 }
 
 
-/* FORMULÁRIO */
+
 
 .formulario {
     background-color: white;
@@ -141,9 +141,6 @@ header p {
     font-weight: bold;
 }
 
-
-/* LISTA */
-
 .titulo-lista {
     margin-bottom: 20px;
 }
@@ -153,9 +150,6 @@ header p {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
-
-
-/* CARD */
 
 .card-jogo {
     background-color: white;
@@ -189,9 +183,6 @@ header p {
     color: #f59e0b;
 }
 
-
-/* BOTÕES */
-
 .botoes {
     display: flex;
     gap: 10px;
@@ -215,8 +206,6 @@ header p {
     background-color: #dc2626;
 }
 
-
-/* RESPONSIVIDADE */
 
 @media (max-width: 768px) {
 

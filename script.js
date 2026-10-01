@@ -1,8 +1,6 @@
 const API_URL = "http://localhost:3000/jogos";
 
 
-// ELEMENTOS DO HTML
-
 const listaJogos = document.getElementById("listaJogos");
 
 const pesquisa = document.getElementById("pesquisa");
@@ -28,16 +26,11 @@ const btnSalvar = document.getElementById("btnSalvar");
 const btnCancelar = document.getElementById("btnCancelar");
 
 
-// VARIÁVEL PARA SABER SE ESTAMOS EDITANDO
 
 let jogoEditando = null;
 
 let jogos = [];
 
-
-// ==================================================
-// CARREGAR JOGOS DA API
-// ==================================================
 
 async function carregarJogos() {
 
@@ -70,10 +63,6 @@ async function carregarJogos() {
     }
 }
 
-
-// ==================================================
-// MOSTRAR JOGOS
-// ==================================================
 
 function mostrarJogos() {
 
@@ -137,7 +126,7 @@ function mostrarJogos() {
             </p>
 
             <p class="nota">
-                ⭐ Nota: ${jogo.nota ?? "Não informada"}
+                 Nota: ${jogo.nota ?? "Não informada"}
             </p>
 
             <span class="status">
@@ -170,10 +159,6 @@ function mostrarJogos() {
 }
 
 
-// ==================================================
-// ATUALIZAR DASHBOARD
-// ==================================================
-
 function atualizarDashboard() {
 
     const total = jogos.length;
@@ -204,10 +189,6 @@ function atualizarDashboard() {
 }
 
 
-// ==================================================
-// PESQUISA
-// ==================================================
-
 pesquisa.addEventListener("input", function() {
 
     mostrarJogos();
@@ -215,9 +196,6 @@ pesquisa.addEventListener("input", function() {
 });
 
 
-// ==================================================
-// FILTRO
-// ==================================================
 
 filtroStatus.addEventListener("change", function() {
 
@@ -226,9 +204,6 @@ filtroStatus.addEventListener("change", function() {
 });
 
 
-// ==================================================
-// CADASTRAR / EDITAR
-// ==================================================
 
 formJogo.addEventListener("submit", async function(event) {
 
@@ -250,7 +225,6 @@ formJogo.addEventListener("submit", async function(event) {
     };
 
 
-    // VALIDAÇÕES
 
     if (jogo.titulo === "") {
 
@@ -311,10 +285,6 @@ formJogo.addEventListener("submit", async function(event) {
         let resposta;
 
 
-        // ==========================================
-        // EDITAR
-        // ==========================================
-
         if (jogoEditando !== null) {
 
             resposta = await fetch(
@@ -348,9 +318,6 @@ formJogo.addEventListener("submit", async function(event) {
         }
 
 
-        // ==========================================
-        // CADASTRAR
-        // ==========================================
 
         else {
 
@@ -385,12 +352,9 @@ formJogo.addEventListener("submit", async function(event) {
         }
 
 
-        // LIMPAR FORMULÁRIO
-
         formJogo.reset();
 
 
-        // VOLTAR PARA MODO CADASTRO
 
         jogoEditando = null;
 
@@ -409,7 +373,6 @@ formJogo.addEventListener("submit", async function(event) {
             "none";
 
 
-        // ATUALIZAR OS JOGOS
 
         await carregarJogos();
 
@@ -426,9 +389,6 @@ formJogo.addEventListener("submit", async function(event) {
 });
 
 
-// ==================================================
-// EDITAR JOGO
-// ==================================================
 
 async function editarJogo(id) {
 
@@ -451,8 +411,6 @@ async function editarJogo(id) {
             await resposta.json();
 
 
-        // COLOCAR OS DADOS NO FORMULÁRIO
-
         titulo.value =
             jogo.titulo || "";
 
@@ -469,12 +427,9 @@ async function editarJogo(id) {
             jogo.status || "";
 
 
-        // GUARDAR ID
-
         jogoEditando = id;
 
 
-        // MUDAR FORMULÁRIO PARA EDIÇÃO
 
         document.getElementById(
             "tituloFormulario"
@@ -490,7 +445,6 @@ async function editarJogo(id) {
             "block";
 
 
-        // IR PARA O FORMULÁRIO
 
         window.scrollTo({
 
@@ -512,10 +466,6 @@ async function editarJogo(id) {
 
 }
 
-
-// ==================================================
-// CANCELAR EDIÇÃO
-// ==================================================
 
 btnCancelar.addEventListener("click", function() {
 
@@ -544,9 +494,6 @@ btnCancelar.addEventListener("click", function() {
 });
 
 
-// ==================================================
-// EXCLUIR JOGO
-// ==================================================
 
 async function excluirJogo(id) {
 
@@ -589,7 +536,6 @@ async function excluirJogo(id) {
             "Jogo excluído com sucesso!";
 
 
-        // ATUALIZAR A LISTA
 
         await carregarJogos();
 
@@ -606,8 +552,6 @@ async function excluirJogo(id) {
 }
 
 
-// ==================================================
-// INICIAR
-// ==================================================
+
 
 carregarJogos();
